@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Armour Penetration Calculator</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <h1>Armour Penetration Calculator</h1>
+            <h3>If you are not interested in tanks or ballistics, this code is not for you.</h3>
+        </div>
+    </header>
+
+    <main>
+        <div class="photos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Bundesarchiv_Bild_101I-299-1805-12,_Nordfrankreich,_Panzer_VI_(Tiger_I).jpg">
+            <p>A Tiger I tank <a href="https://upload.wikimedia.org/wikipedia/commons/2/27/Bundesarchiv_Bild_101I-299-1805-12,_Nordfrankreich,_Panzer_VI_(Tiger_I).jpg">Photo link</a></p>
+        </div>
+
+        <div class="info">
+            <h2>The Math...</h2>
+            <p class="denote">*This is based on WG's (Wargaming's) Youtube video, link can be found <a href="https://www.youtube.com/watch?v=YtuYAiVZ050">HERE</a>.</p>
+            <h4>What affects the projectile's penetration?</h4>
+            <p style="color: red; font-size: 14px;">The folliwing values are for Metric Units only!</p>
+            <ul>
+                <li>Ballistic Coefficient (Drag of the projectile), we will assign "c" to it.</li>
+                <li>Air density (Average density is ~1.2kg/m³), we will assign "ρ" to it.</li>
+                <li>Time in flight, we will assign "t" to it.</li>
+                <li>Mass of the projectile, we will assign "m" to it.</li>
+                <li>Muzzle velocity, we will assign "V0x" to it.</li>
+                <li>Height of discharge, we will assign "h" to it.</li>
+                <li>Gravity acceleration,(9.81 m/s²) we will assign "g" to it.</li>
+                <li>Cross section of the projectile, we will assign "A" to it.</li>
+                <li>velocity of the projectile, we will assign "V" to it.</li>
+            </ul>
+
+
+            <div class="math">
+                <p>Drag formula (to determine round's range):</p>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>=</mo>
+                        <mi>V0x</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mi>-c</mi>
+                                <msub>
+                                    <mi>p</mi>
+                                </msub>
+                                <mi>A</mi>
+                                <msub>
+                                    <mi>v</mi>
+                                    <mn>2</mn>
+                                </msup>
+                                <msub>
+                                    <mi>t</mi>
+                                    <mn>2</mn>
+                                </msub>
+                            </mrow>
+                            <mn>2m</mn>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </div>
+
+            <div class="math">
+                <p>Example</p>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <msub>
+                            <mi>v</mi>
+                            <mn>x</mn>
+                        </msub>                        
+                        <mo>=</mo>
+                        <mi>v</mi>
+                        <mn>cos θ</mn>
+                        <mo>=</mo>
+                        <mo>(</mo>
+                        <mn>10</mn>
+                        <ms>m/s</ms>
+                        <mo>)</mo>
+                        <mn>cos 30</mn>
+                        <mo>=</mo>
+                        <mn>8.66</mn>
+                        <mo>m/s</mo>
+                    </mrow>
+
+                </math>
+                <br>
+                <math>
+
+                    <mrow>
+                            
+                        <msub>
+                            <mi>v</mi>
+                            <mn>y</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mi>v</mi>
+                        <mn>sin θ</mn>
+                        <mo>=</mo>
+                        <mo>(</mo>
+                        <mn>10</mn>
+                        <ms>m/s</ms>
+                        <mo>)</mo>
+                        <mn>sin 30</mn>
+                        <mo>=</mo>
+                        <mn>5.00</mn>
+                        <mo>m/s</mo>
+                    </mrow>                    
+                </math>
+            </div>
+
+            <div class="mathSolve">
+                <p>Solved *Without Drag</p>
+                <math class ="solve" xmlns="http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mo>(</mo>
+                        <mi>400</mi>
+                        <mo>m/s</mo>
+                        <mo>)</mo>
+                    </mrow>
+                    <mo>√</mo>
+                    <mfrac>
+                        <mrow>
+                            <mi>2</mi>
+                            <mo>(</mo>
+                            <mi>1m</mi>
+                            <mo>)</mo>
+                        </mrow>
+                        <mrow>
+                            <mi>9.8</mi>
+                            <mo>m/s²</mo>
+                        </mrow>
+                    </mfrac>
+                    <mo>=</mo>
+                    <mn>180.8</mn>
+                    <mo> meters</mo>
+                        
+                </math>
+            </div>
+
+
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>
